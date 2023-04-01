@@ -41,15 +41,6 @@ print(word_tags_list[0])
 print(classes)   
 
 #Create word corpus for chatbot
-def create_bot_corpus(stem_words, classes):
-
-    stem_words = sorted(list(set(stem_words)))
-    classes = sorted(list(set(classes)))
-
-    pickle.dump(stem_words, open('words.pkl','wb'))
-    pickle.dump(classes, open('classes.pkl','wb'))
-
-    return stem_words, classes
 
 stem_words, classes = create_bot_corpus(stem_words,classes)  
 
@@ -88,17 +79,7 @@ for word_tags in word_tags_list:
 print(training_data[0])
 
 # Create training data
-def preprocess_train_data(training_data):
-   
-    training_data = np.array(training_data, dtype=object)
-    
-    train_x = list(training_data[:,0])
-    train_y = list(training_data[:,1])
 
-    print(train_x[0])
-    print(train_y[0])
-  
-    return train_x, train_y
 
 train_x, train_y = preprocess_train_data(training_data)
 
